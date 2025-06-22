@@ -9,7 +9,7 @@ const Login = ({ theme, setTheme }) => {
 
   const onFinish = async (values) => {
     try {
-      const res = await axios.post("https://news-backend-ten.vercel.app/api/auth/login", {
+      const res = await axios.post("https://news-backend-pr6b.onrender.com/api/auth/login", {
         email: values.email,
         password: values.password,
       });
