@@ -34,7 +34,7 @@ const EditPage = ({ theme, setTheme }) => {
     }
 
     try {
-      const res = await axios.post("https://news-backend-ten.vercel.app/api/auth/edit", formData, {
+      const res = await axios.post("https://news-backend-pr6b.onrender.com/api/auth/edit", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           token: token,
@@ -52,7 +52,7 @@ const EditPage = ({ theme, setTheme }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.post("https://news-backend-ten.vercel.app/api/auth/delete", {}, {
+      await axios.post("https://news-backend-pr6b.onrender.com/api/auth/delete", {}, {
         headers: { token },
       });
 
