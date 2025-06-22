@@ -22,7 +22,7 @@ const Signup = ({ theme, setTheme }) => {
     formData.append("profilePic", fileObj);
 
     try {
-      const res = await axios.post("https://news-today-1.onrender.com/api/auth/signup", formData, {
+      const res = await axios.post("https://news-backend-ten.vercel.app/api/auth/signup", formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
 
