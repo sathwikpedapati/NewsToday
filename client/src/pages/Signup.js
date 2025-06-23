@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import { Button, Form, Input, Upload, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,6 +7,12 @@ import axios from 'axios';
 
 const Signup = ({ theme, setTheme }) => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.setAttribute('data-bs-theme', 'light');
+    document.body.style.backgroundColor = '#f8f9fa';
+    document.body.style.color = '#000000';
+  }, []);
 
   const onFinish = async (values) => {
     const formData = new FormData();
@@ -38,14 +44,14 @@ const Signup = ({ theme, setTheme }) => {
   };
 
   const labelStyle = {
-    color: 'green',
+    color: '#6c757d', // Light gray
     fontWeight: 'bold',
     display: "flex",
   };
 
   return (
     <>
-      <Navbar theme={theme} setTheme={setTheme} />
+      <Navbar theme="light" setTheme={() => {}} showThemeToggle={false} />
       <div style={{
         display: 'flex',
         justifyContent: 'center',
@@ -60,7 +66,7 @@ const Signup = ({ theme, setTheme }) => {
           onFinish={onFinish}
           autoComplete="off"
         >
-          <h2 style={{ textAlign: "center", lineHeight: '4rem', color: "#d3d3d3" }}>Sign-Up</h2>
+          <h2 style={{ textAlign: "center", lineHeight: '4rem', color: "#333" }}>Sign-Up</h2>
 
           <Form.Item
             label="Username"
@@ -99,7 +105,7 @@ const Signup = ({ theme, setTheme }) => {
           </Form.Item>
 
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: "center" }}>
-            <Link to="/login" style={{ marginBottom: '10px', color: "#d3d3d3" }}>
+            <Link to="/login" style={{ marginBottom: '10px', color: "#333" }}>
               Already have an account?
             </Link>
             <Form.Item>
