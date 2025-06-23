@@ -23,7 +23,7 @@ const Login = ({ theme, setTheme }) => {
   };
 
   const labelStyle = {
-    color: '#d3d3d3',
+    color: 'green',
     fontWeight: 'bold',
     display: 'flex',
   };
