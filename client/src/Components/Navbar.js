@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button, message } from 'antd';
 
-const Navbar = ({ setCategory, theme = 'dark', setTheme }) => {
+const Navbar = ({ setCategory, theme = 'light', setTheme }) => {
   const navigate = useNavigate();
   const logedinuser = JSON.parse(localStorage.getItem("user"));
   const isDark = theme === 'dark';
