@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../Components/Navbar';
 import { Button, Form, Input, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,6 +6,12 @@ import axios from 'axios';
 
 const Login = ({ theme, setTheme }) => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.setAttribute('data-bs-theme', 'light');
+    document.body.style.backgroundColor = '#f8f9fa';
+    document.body.style.color = '#000000';
+  }, []);
 
   const onFinish = async (values) => {
     try {
@@ -23,14 +29,14 @@ const Login = ({ theme, setTheme }) => {
   };
 
   const labelStyle = {
-    color: 'green',
+    color: '#6c757d', // Light gray
     fontWeight: 'bold',
     display: 'flex',
   };
 
   return (
     <>
-      <Navbar theme={theme} setTheme={setTheme} />
+      <Navbar theme="light" setTheme={() => {}} showThemeToggle={false} />
       <div style={{
         display: 'flex',
         justifyContent: 'center',
@@ -46,7 +52,7 @@ const Login = ({ theme, setTheme }) => {
           onFinish={onFinish}
           autoComplete="off"
         >
-          <h2 style={{ textAlign: "center", lineHeight: '4rem', color: "#d3d3d3" }}>Log-In</h2>
+          <h2 style={{ textAlign: "center", lineHeight: '4rem', color: "#333" }}>Log-In</h2>
 
           <Form.Item
             label="Email"
@@ -65,10 +71,10 @@ const Login = ({ theme, setTheme }) => {
           </Form.Item>
 
           <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
-            <Link to="/signup" style={{ textDecoration: 'none', marginTop: "0.5rem" }}>
+            <Link to="/signup" style={{ textDecoration: 'none', marginTop: "0.5rem", marginRight: "1rem" }}>
               Create New Account?
             </Link>
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            <Form.Item wrapperCol={{ offset: 0 }}>
               <Button type="primary" htmlType="submit">
                 Sign-In
               </Button>
