@@ -15,7 +15,7 @@ const Login = ({ theme, setTheme }) => {
 
   const onFinish = async (values) => {
     try {
-      const res = await axios.post("https://news-43hs.vercel.app/api/auth/login", {
+      const res = await axios.post("https://news-backend-black.vercel.app/api/auth/login", {
         email: values.email,
         password: values.password,
       });
