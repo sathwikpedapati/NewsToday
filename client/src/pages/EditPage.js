@@ -52,7 +52,7 @@ const EditPage = ({ theme, setTheme }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.post("https://news-backend-pr6b.onrender.com/api/auth/delete", {}, {
+      await axios.post("https://news-43hs.vercel.app/api/auth/delete", {}, {
         headers: { token },
       });
 
