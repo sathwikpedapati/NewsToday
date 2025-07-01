@@ -9,7 +9,7 @@ const NewsBoard = ({ category }) => {
     const fetchNews = async () => {
       setLoading(true);
       try {
-        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=b10b1e22f83a43838af6663683946d4a`;
+        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=33ac018419f6495b84d0f5a964c886da`;
         const response = await fetch(url);
         const data = await response.json();
         setArticles(Array.isArray(data.articles) ? data.articles : []);
