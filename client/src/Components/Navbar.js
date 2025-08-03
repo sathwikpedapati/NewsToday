@@ -59,14 +59,13 @@ const Navbar = ({ setCategory, theme = 'light', setTheme }) => {
                 ))}
               </ul>
 
-              <div style={{ display: "flex", flexDirection: "row" }}>
-                <div className="dropdown">
+              <div className="d-flex align-items-center">
+                <div className="dropdown me-3">
                   <button
                     className="btn btn-secondary dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
-                    style={{ marginRight: '1rem' }}
                   >
                     Profile Details
                   </button>
@@ -85,16 +84,20 @@ const Navbar = ({ setCategory, theme = 'light', setTheme }) => {
                   </ul>
                 </div>
 
+                <span className={`badge me-2 ${badgeClass}`}>
+                  {isDark ? 'Dark Mode' : 'Light Mode'}
+                </span>
+
                 <button onClick={toggleTheme} className="btn btn-outline-secondary">
-                  {isDark ? 'Light Mode' : 'Dark Mode'}
+                  Toggle Theme
                 </button>
               </div>
             </div>
           </>
         ) : (
-          <div style={{ display: "flex", flexDirection: "row", marginLeft: "auto" }}>
+          <div className="d-flex align-items-center" style={{ marginLeft: 'auto' }}>
             <button onClick={toggleTheme} className="btn btn-outline-secondary">
-              {isDark ? 'Light Mode' : 'Dark Mode'}
+              Toggle Theme
             </button>
           </div>
         )}
