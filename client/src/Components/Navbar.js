@@ -85,7 +85,7 @@ const Navbar = ({ setCategory, theme = 'light', setTheme }) => {
                 </div>
 
                 <button onClick={toggleTheme} className="btn btn-outline-secondary">
-                  Toggle Theme
+                  Theme
                 </button>
               </div>
             </div>
