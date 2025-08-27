@@ -29,14 +29,13 @@ const Login = ({ theme, setTheme }) => {
   };
 
   const labelStyle = {
-    color: '#6c757d', // Light gray
+    color: '#6c757d',
     fontWeight: 'bold',
     display: 'flex',
   };
 
   return (
     <>
-      <Navbar theme="light" setTheme={() => {}} showThemeToggle={false} />
       <div style={{
         display: 'flex',
         justifyContent: 'center',
