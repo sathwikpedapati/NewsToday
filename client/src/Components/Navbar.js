@@ -93,7 +93,7 @@ const Navbar = ({ setCategory, theme = 'light', setTheme }) => {
         ) : (
           <div className="d-flex align-items-center" style={{ marginLeft: 'auto' }}>
             <button onClick={toggleTheme} className="btn btn-outline-secondary">
-              Toggle Theme
+              Theme
             </button>
           </div>
         )}
