@@ -55,7 +55,6 @@ const Signup = ({ theme, setTheme }) => {
 
   return (
     <>
-      <Navbar theme="light" setTheme={() => {}} showThemeToggle={false} />
       <div style={{
         display: 'flex',
         justifyContent: 'center',
