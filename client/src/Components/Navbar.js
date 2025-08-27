@@ -84,10 +84,6 @@ const Navbar = ({ setCategory, theme = 'light', setTheme }) => {
                   </ul>
                 </div>
 
-                <span className={`badge me-2 ${badgeClass}`}>
-                  {isDark ? 'Dark Mode' : 'Light Mode'}
-                </span>
-
                 <button onClick={toggleTheme} className="btn btn-outline-secondary">
                   Toggle Theme
                 </button>
