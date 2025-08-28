@@ -1,3 +1,4 @@
+// index.js
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -6,31 +7,35 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ViewPage from './pages/ViewPage';
 import EditPage from './pages/EditPage';
-import PrivateRoute from "./Components/PrivateRoute";
+import PrivateRoute from './Components/PrivateRoute';
 
 const RootApp = () => {
-  // Load theme from localStorage or default to dark
+  // Theme state
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
-    // Apply theme to body
+    // Apply theme
     document.body.setAttribute('data-bs-theme', theme);
     document.body.style.backgroundColor = theme === 'dark' ? '#121212' : '#f8f9fa';
     document.body.style.color = theme === 'dark' ? '#ffffff' : '#000000';
 
-    // Store theme preference
+    // Save to localStorage
     localStorage.setItem('theme', theme);
   }, [theme]);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={Login}/>
-        <Route path="/signup" element={Signup}/>
+        {/* Public Routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Private Routes */}
         <Route
           path="/"
           element={
@@ -55,6 +60,8 @@ const RootApp = () => {
             </PrivateRoute>
           }
         />
+
+        {/* Fallback Route */}
         <Route
           path="*"
           element={
