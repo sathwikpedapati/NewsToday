@@ -29,8 +29,8 @@ const RootApp = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login"/>
-        <Route path="/signup"/>
+        <Route path="/login" element={}/>
+        <Route path="/signup" element={}/>
         <Route
           path="/"
           element={
